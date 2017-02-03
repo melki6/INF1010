@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include "Const.h"
+using namespace std;
 
 Specialite::Specialite()
 {
@@ -31,10 +32,17 @@ void Specialite::modifierNiveau(unsigned int niveau)
 	niveau_ = niveau;
 }
 
-void information() const // A MODIFIER... (si necessaire)
+ostream& operator<<(ostream& sortie, Specialite& specialite)
 {
-	cout << " | " << specialite.domaine_ << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
-	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
-
-	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
+	return sortie << " | " << specialite.domaine_ << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size())
+	 << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_
+	 << AFFICHER_ESPACE(espace_niveau) << " | ";
 }
+
+//void information() const // A MODIFIER... (si necessaire)
+//{
+//	cout << " | " << specialite.domaine_ << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
+//	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
+//
+//	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
+//}

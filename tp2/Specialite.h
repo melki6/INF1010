@@ -17,7 +17,9 @@ public:
 	void modifierDomaine(const std::string& domaine);
 	void modifierNiveau(unsigned int niveau);
 
-	void information() const; // A MODIFIER... (si necessaire) 
+	friend std::ostream& operator<<(std::ostream& sortie, Specialite& Specialite);
+
+	//void information() const; // A MODIFIER... (si necessaire) 
 
 	// _________TP2___________
 private:
