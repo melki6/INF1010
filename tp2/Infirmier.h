@@ -13,15 +13,14 @@ public:
 
 	std::string obtenirNom() const; 
 	std::string obtenirPrenom() const;
+	std::string obtenirNomComplet() const;
 	unsigned int obtenirNbChambre() const;
 
 	void modifierNom(const std::string& nom);
 	void modifierPrenom(const std::string& prenom);
 	void modifierNbChambre(unsigned int nbChambre);
 
-	//void information() const; // A MODIFIER... (si necessaire)
-	friend std::ostream& operator<<(std::ostream& sortie, Infirmier& infirmier);
-
+	void information() const; // A MODIFIER... (si necessaire)
 
 private:
 	std::string nom_;
