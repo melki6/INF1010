@@ -33,6 +33,8 @@ std::string Infirmier::obtenirNomComplet() const // AC: implementation obtenirNo
 	std::vector <std::string> nomComplet;
 	nomComplet.push_back(obtenirPrenom());
 	nomComplet.push_back (obtenirPrenom());
+        
+    	return nomComplet;
 	
 }
 
