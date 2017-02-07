@@ -22,7 +22,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& sortie, Infirmier& infirmier);
 	std::string Infirmier::operator+(Infirmier &infirmier1);
 	bool Infirmier::operator==(Infirmier &infirmier);
-	//bool operator==(const std::string &NomComplet);
+	bool operator==(const std::string &NomComplet);
 private:
 	std::string nom_;
 	std::string prenom_;

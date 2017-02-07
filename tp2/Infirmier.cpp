@@ -68,8 +68,8 @@ bool Infirmier::operator==(Infirmier &infirmier)
 {
 	 return (nom_ == infirmier.obtenirNom() && prenom_ == infirmier.obtenirPrenom());
 }
-//bool Infirmier::operator==(const string &NomComplet)
-//{
-//	return prenom_ + nom_ == NomComplet;
-//}
+bool Infirmier::operator==(const string &NomComplet)
+{
+	return prenom_ + nom_ == NomComplet;
+}
 
