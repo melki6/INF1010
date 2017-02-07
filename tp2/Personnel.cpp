@@ -22,8 +22,15 @@ Personnel::~Personnel() {};
 //}
 bool Personnel::ajouterInfirmier(Infirmier* infirmier) 
 {
-	for (int i=0; i<Infirmier_.size(); i++)
-	return (Infirmier_[i]==infirmier);
+	bool ok=true;
+	for (int i = 0; i < Infirmier_.size(); i++) {
+		if (*this->Infirmier_[i] == *infirmier)
+			ok = false;
+		else
+			ok = true;
+	}
+	return ok;
+
 }
 
 //bool Personnel::retirerInfirmier(const std::string& nomComplet) 
@@ -34,8 +41,12 @@ bool Personnel::ajouterInfirmier(Infirmier* infirmier)
 	
 Personnel& Personnel::operator+=(Infirmier* infirmier)
 {
-
-	this->Infirmier_.push_back(infirmier);
+		if (this->ajouterInfirmier(infirmier) == true) {
+			this->Infirmier_.push_back(infirmier);
+			cout << infirmier->obtenirNomComplet()<<" "<<"infirmier ajouter" << endl;
+		}
+		else
+			cout <<infirmier->obtenirNomComplet() << " "<<"Infirmier pas ajouter" << endl;
 	return *this;
 }
 

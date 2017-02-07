@@ -21,21 +21,22 @@ int main()
 
 	//1-  Creez 11 objets du type Infirmier � l'aide du constructeur par param�tre avec des valeurs de votre choix
 	Infirmier* infirmier1 = new Infirmier("Doe","John",10);
-	Infirmier* infirmier2 = new Infirmier("Tremblay","oliver",10);
+	Infirmier* infirmier2 = new Infirmier("Doe","John",10);
 	Infirmier* infirmier3 = new Infirmier("Labe", "Sylvie", 3);
 	Infirmier* infirmier4 = new Infirmier("Labelle", "Amelie", 4);
-	Infirmier* infirmier5 = new Infirmier("Lamontagne", "Maxime", 5);
+	Infirmier* infirmier5 = new Infirmier("Lamontagne","Maxime",5);
 	Infirmier* infirmier6 = new Infirmier("Laflamme", "John", 6);
 	Infirmier* infirmier7 = new Infirmier("Lamoureux", "Julie", 7);
 	Infirmier* infirmier8 = new Infirmier("Langlais", "Eric", 8);
 	Infirmier* infirmier9 = new Infirmier("Lamarre", "Roger", 9);
-	Infirmier* infirmier10 = new Infirmier("Laplante", "Linda", 10);
+	Infirmier* infirmier10 = new Infirmier("Laplante","Linda",10);
 	Infirmier* infirmier11 = new Infirmier("Latour", "Hug", 3);
+	//
+	//if (*infirmier1 == *infirmier2)
+	//	cout << "ERREUR:infirmier IDENTIQUE" << endl;
+	//else
+	//	cout << "Infirmier AJOUTER" << endl;
 	
-	if (*infirmier1 == *infirmier2)
-		cout << "ERREUR:infirmier IDENTIQUE" << endl;
-	else
-		cout << "Infirmier AJOUTER" << endl;
 	//2-  Creez deux objets du type Personnel � l'aide du constructeur par d�faut
 	// A COMPLETER...
 
@@ -102,4 +103,20 @@ int main()
 	p += infirmier11;
 	p << cout;
 	return 0;
+	//vector <Personnel> p[11];
+	//p[0] += infirmier1;
+	//p[1] += infirmier2;
+	//p[2] += infirmier3;
+	//p[3] += infirmier4;
+	//p[4] += infirmier5;
+	//p[5] += infirmier6;
+	//p[6] += infirmier7;
+	//p[7] += infirmier8;
+	//p[8] += infirmier9;
+	//p[9] += infirmier10;
+	//p[10] += infirmier11;
+	//for (int i = 0; i<p.size(); i++)
+	//	p[i] << cout;
+	
+
 }
