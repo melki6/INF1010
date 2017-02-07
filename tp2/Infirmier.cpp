@@ -8,8 +8,11 @@ Infirmier::Infirmier()
 {
 }
 
-Infirmier::Infirmier(const std::string & nom, const std::string & prenom, unsigned int nbChambre): nom_(nom), prenom_(prenom), nbChambre_(nbChambre)
+Infirmier::Infirmier(const std::string & nom, const std::string & prenom, unsigned int nbChambre)
 {
+	nom_ = nom;
+	prenom_ = prenom;
+	nbChambre_ = nbChambre;
 }
 
 
@@ -22,23 +25,22 @@ std::string Infirmier::obtenirNom() const
 	return nom_;
 }
 
-std::string Infirmier::obtenirPrenom() const
+string Infirmier::obtenirPrenom() const
 {
 	return prenom_;
+}
+unsigned int Infirmier::obtenirNbChambre() const
+{
+	return nbChambre_;
 }
 
 string Infirmier::operator+(Infirmier &infirmier)
 {
 	return (infirmier.obtenirNom() + infirmier.obtenirPrenom());
 }
-string Infirmier::obtenirNomComplet(Infirmier &infirmier) const // AC: implementation obtenirNomComplet
+string Infirmier::obtenirNomComplet() const // AC: implementation obtenirNomComplet
 {
-	return infirmier.obtenirNom() + " " + infirmier.obtenirPrenom();
-}
-
-unsigned int Infirmier::obtenirNbChambre() const
-{
-	return nbChambre_;
+	return prenom_ + " " + nom_;
 }
 
 void Infirmier::modifierNom(const std::string & nom)
@@ -64,17 +66,10 @@ ostream& operator<<(ostream& sortie, Infirmier& infirmier)
 }
 bool Infirmier::operator==(Infirmier &infirmier)
 {
-	return nom_ == infirmier.obtenirNom(), prenom_ == infirmier.obtenirPrenom();
+	 return (nom_ == infirmier.obtenirNom() && prenom_ == infirmier.obtenirPrenom());
 }
-bool Infirmier::operator==(const string &NomComplet)
-{
-	Infirmier infirmier;
-	return infirmier.obtenirNomComplet(infirmier) == NomComplet;
-}
-//void Infirmier::information() const // A MODIFIER... (si necessaire)
+//bool Infirmier::operator==(const string &NomComplet)
 //{
-//	std::cout << "| " << infirmier.obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - infirmier.obtenirNom().size());
-//	std::cout << " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size()/2);
-//	std::cout << infirmier.nbChambre_ << AFFICHER_ESPACE(espace_chambre);
-//	std::cout << "|" << std::endl;
+//	return prenom_ + nom_ == NomComplet;
 //}
+

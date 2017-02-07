@@ -5,16 +5,37 @@
 
 #include <string>
 #include <iostream>
-
+#include "infirmier.h"
+#include "Specialite.h"
+#include "Personnel.h"
+#include <vector>
 using namespace std;
 
 int main()
 {
+
+	
+	
+	
 	// C'est a vous de voir si vous devez allouer dynamiquement ou non les elements
 
 	//1-  Creez 11 objets du type Infirmier � l'aide du constructeur par param�tre avec des valeurs de votre choix
-	// A COMPLETER...
-
+	Infirmier* infirmier1 = new Infirmier("Doe","John",10);
+	Infirmier* infirmier2 = new Infirmier("Tremblay","oliver",10);
+	Infirmier* infirmier3 = new Infirmier("Labe", "Sylvie", 3);
+	Infirmier* infirmier4 = new Infirmier("Labelle", "Amelie", 4);
+	Infirmier* infirmier5 = new Infirmier("Lamontagne", "Maxime", 5);
+	Infirmier* infirmier6 = new Infirmier("Laflamme", "John", 6);
+	Infirmier* infirmier7 = new Infirmier("Lamoureux", "Julie", 7);
+	Infirmier* infirmier8 = new Infirmier("Langlais", "Eric", 8);
+	Infirmier* infirmier9 = new Infirmier("Lamarre", "Roger", 9);
+	Infirmier* infirmier10 = new Infirmier("Laplante", "Linda", 10);
+	Infirmier* infirmier11 = new Infirmier("Latour", "Hug", 3);
+	
+	if (*infirmier1 == *infirmier2)
+		cout << "ERREUR:infirmier IDENTIQUE" << endl;
+	else
+		cout << "Infirmier AJOUTER" << endl;
 	//2-  Creez deux objets du type Personnel � l'aide du constructeur par d�faut
 	// A COMPLETER...
 
@@ -67,6 +88,18 @@ int main()
 
 	//12- Faites afficher l'hopital Sacré-Coeur puis Jean-Talon
 	// A COMPLETER...
-
+	Personnel p;
+	p += infirmier1;
+	p += infirmier2;
+	p += infirmier3;
+	p += infirmier4;
+	p += infirmier5;
+	p += infirmier6;
+	p += infirmier7;
+	p += infirmier8;
+	p += infirmier9;
+	p += infirmier10;
+	p += infirmier11;
+	p << cout;
 	return 0;
 }
