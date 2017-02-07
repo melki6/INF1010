@@ -24,8 +24,10 @@ public:
 	void modifierNom(const string& nom);
 	void modifierHoraires(int horaires);
 	void modifierSpecialite(Specialite* specialite);
-	
-	void information() const; // A MODIFIER... (si necessaire)
+	bool Medecin::operator==(Medecin &medecin);
+	bool Medecin::operator==(const std::string &Nom);
+	friend std::ostream& operator<<(std::ostream& sortie, Medecin& medecin);
+
 private:
 	// Variables privees
 	string nom_;

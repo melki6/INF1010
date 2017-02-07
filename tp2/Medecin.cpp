@@ -46,11 +46,17 @@ void Medecin::modifierSpecialite(Specialite* specialite)
 	specialite_ = specialite;
 }
 
-void Medecin::information() const
+ostream& operator<<(ostream& sortie, Medecin& Medecin)
 {
-	std::cout << "| " << medecin.nom_ << AFFICHER_ESPACE(espace_nom - medecin.nom_.size());
-	std::cout << " | " << AFFICHER_ESPACE(espace_horaires - std::to_string(medecin.horaires_).size()) << medecin.horaires_;
-	std::cout << AFFICHER_ESPACE(espace_horaires);
-	medecin.obtenirSpecialite().information();
-	std::cout << endl;
+	return sortie << Medecin.nom_ << " " << Medecin.horaires_ << " "<<Medecin.specialite_;
+
 }
+bool Medecin::operator==(Medecin &medecin)
+{
+	return (nom_ == medecin.obtenirNom());
+}
+bool Medecin::operator==(const string &Nom)
+{
+	return  nom_ == Nom;
+}
+
