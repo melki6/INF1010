@@ -6,7 +6,6 @@
 #include "Medecin.h"
 #include "Infirmier.h"
 
-using namespace std;
 
 class Personnel
 {
@@ -27,14 +26,18 @@ public:
 	Personnel& operator-=(Medecin* medecin);
 	Personnel& operator+=(Infirmier* infirmier);
 	Personnel& operator-=(Infirmier* infirmier);
+	
+	void afficherInfirmier();
 		
 	void information() const; // A MODIFIER... (si necessaire)
+	void operator<<(ostream& sortie);
 	// _________TP2___________
 
 private:
 	void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
-	void afficherMedecins() const; // A MODIFIER... (si necessaire)
-
+	//void afficherMedecins() const; // A MODIFIER... (si necessaire)
+	vector < Infirmier* > Infirmier_;
+	vector < Medecin*> Medecin_;
 	// _________TP2___________
 };
 
