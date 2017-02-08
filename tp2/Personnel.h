@@ -26,11 +26,10 @@ public:
 	Personnel& operator-=(Medecin* medecin);
 	Personnel& operator+=(Infirmier* infirmier);
 	Personnel& operator-=(Infirmier* infirmier);
-	
-	void afficherInfirmier();
 		
-	void information() const; // A MODIFIER... (si necessaire)
-	friend std::ostream& operator<<(std::ostream& sortie,Personnel* personnel); // operateur pour affichage Personnel
+	friend ostream& operator<<(ostream& sortie,Personnel* personnel); // AC: operateur pour affichage Personnel
+
+	void information() const;
 	// _________TP2___________
 
 private:

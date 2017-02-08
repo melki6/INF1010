@@ -38,7 +38,8 @@ int main()
 	//	cout << "Infirmier AJOUTER" << endl;
 	
 	//2-  Creez deux objets du type Personnel � l'aide du constructeur par d�faut
-	// A COMPLETER...
+	Personnel personnel1;
+	Personnel peronnel2;
 
 	//3 - Creez deux objects de type Hopital qui vont prendre chacun en parametre le nom de l'hopital et le personnel assigné
 	// Hopital Sacré-Coeur de Montréal
@@ -47,7 +48,18 @@ int main()
 
 
 	//4-  Ajoutez les 6 objets du type Infimier � au personnel de l'Hôpital Sacré-Coeur de Montréal
-	// A COMPLETER...
+	personnel1 += infirmier1;
+	personnel1 += infirmier2;
+	personnel1 += infirmier3;
+	personnel1 += infirmier4;
+	personnel1 += infirmier5;
+	personnel1 += infirmier6;
+
+	personnel1.information();
+
+	cout << *infirmier10 << " " << *infirmier3;
+
+
 
 	//5-  Ajoutez les 5 objets qui restent du type Infimier � au personnel de l'Hôpital Jean-Talon
 	// A COMPLETER...
@@ -89,20 +101,20 @@ int main()
 
 	//12- Faites afficher l'hopital Sacré-Coeur puis Jean-Talon
 	// A COMPLETER...
-	Personnel p;
-	p += infirmier1;
-	p += infirmier2;
-	p += infirmier3;
-	p += infirmier4;
-	p += infirmier5;
-	p += infirmier6;
-	p += infirmier7;
-	p += infirmier8;
-	p += infirmier9;
-	p += infirmier10;
-	p += infirmier11;
-	p << cout;
-	return 0;
+	//Personnel p;
+	//p += infirmier1;
+	//p += infirmier2;
+	//p += infirmier3;
+	//p += infirmier4;
+	//p += infirmier5;
+	//p += infirmier6;
+	//p += infirmier7;
+	//p += infirmier8;
+	//p += infirmier9;
+	//p += infirmier10;
+	//p += infirmier11;
+	//cout<<p;
+	//return 0;
 	//vector <Personnel> p[11];
 	//p[0] += infirmier1;
 	//p[1] += infirmier2;

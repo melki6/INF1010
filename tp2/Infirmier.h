@@ -19,7 +19,11 @@ public:
 	void modifierNom(const std::string& nom);
 	void modifierPrenom(const std::string& prenom);
 	void modifierNbChambre(unsigned int nbChambre);
+
 	friend std::ostream& operator<<(std::ostream& sortie, Infirmier& infirmier);
+
+	void information() ;
+
 	std::string Infirmier::operator+(Infirmier &infirmier1);
 	bool Infirmier::operator==(Infirmier &infirmier);
 	bool operator==(const std::string &NomComplet);

@@ -38,7 +38,7 @@ bool Personnel::retirerMedecin(const std::string& nom)
 	for (int i = 0; i < medecins_.size(); i++)    // AC: parcourir le tableau pour trouver si le medecin existe
 	{
 		if (*medecins_[i] == nom) {
-			medecins_[i] == medecins_[medecins_.size()];   // copier le contenu du dernier medicin a la place de medecin curent
+			medecins_[i] = medecins_[medecins_.size()];   // copier le contenu du dernier medicin a la place de medecin curent
 			medecins_.pop_back();                          // effacer le dernier element du vecteur medecins
 			return true;
 		}
@@ -61,7 +61,7 @@ Personnel& Personnel::operator-=(Medecin* medecin)
 
 bool Personnel::ajouterInfirmier(Infirmier* infirmier) 
 {
-	bool infirmierTrouve;
+	bool infirmierTrouve=false;
 	for (int i = 0; i < infirmiers_.size(); i++) {         // parcurir le vecteur infirmiers pour verifier si l'infirmier existe
 		if (*infirmiers_[i] == *infirmier)
 			infirmierTrouve = true;
@@ -108,25 +108,20 @@ Personnel& Personnel::operator-=(Infirmier* infirmier) //AC: appel a la fonction
 	return *this;
 }
 
-void Personnel::information(Personnel* personnel) const // A MODIFIER...
+
+ ostream& operator<<(ostream& sortie, Personnel* personnel) // AC: operateur pour l'affichage personnel
+
 {
-  personnel->afficherInfirmiers();
-	personnel->afficherMedecins();
+	 personnel->information();
+	 return sortie;
 }
 
-////void Personnel::afficherInfirmier()
-////{
-////	
-////	for (int i = 0; i < Infirmier_.size(); i++){
-////		/*cout << Infirmier_[i]<<endl;*/
-////		this << cout, Infirmier_[i];
-////	}
-////		
-////}
-void Personnel::operator<<(Personnel* personnel)
-{
-	
-}
+ void Personnel::information() const// A MODIFIER...
+ {
+	 this->afficherInfirmiers();
+	 this->afficherMedecins();
+ }
+
 void Personnel::afficherMedecins() const // A MODIFIER... (si necessaire)
 {
 	string tabMed = "Tableau Medecins";
@@ -173,7 +168,8 @@ void Personnel::afficherInfirmiers() const // A MODIFIER... (si necessaire)
 
 	for (size_t i = 0; i < infirmiers_.size(); i++)
 	{
-		infirmiers_[i]->information()
+	
+		infirmiers_[i]->information();
 		std::cout << endl;
 	}
 

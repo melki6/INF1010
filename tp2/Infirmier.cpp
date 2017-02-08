@@ -57,13 +57,19 @@ void Infirmier::modifierNbChambre(unsigned int nbChambre)
 {
 	nbChambre_ = nbChambre;
 }
-ostream& operator<<(ostream& sortie, Infirmier& infirmier)
+std::ostream& operator<<(std::ostream& sortie, Infirmier& infirmier)
 {
-	return sortie << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size() / 2) << infirmier.obtenirPrenom() << AFFICHER_ESPACE(espace_chambre) << " " << infirmier.obtenirNom()
-		<< " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size() / 2)
-		 << infirmier.nbChambre_ << AFFICHER_ESPACE(espace_chambre)
-		 << "|" << std::endl;
+	return sortie << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size() / 2) << infirmier.obtenirPrenom() 
+		<< AFFICHER_ESPACE(espace_chambre) << " " << infirmier.obtenirNom()<< " | " 
+		<< AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size() / 2)<< infirmier.nbChambre_ 
+		<< AFFICHER_ESPACE(espace_chambre)<< "|" << std::endl;
 }
+
+void Infirmier::information() 
+{
+	cout << *this ;
+}
+
 bool Infirmier::operator==(Infirmier &infirmier)
 {
 	 return (nom_ == infirmier.obtenirNom() && prenom_ == infirmier.obtenirPrenom());

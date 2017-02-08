@@ -26,7 +26,10 @@ public:
 	void modifierSpecialite(Specialite* specialite);
 	bool Medecin::operator==(Medecin &medecin);
 	bool Medecin::operator==(const std::string &Nom);
+
 	friend std::ostream& operator<<(std::ostream& sortie, Medecin& medecin);
+
+	void information() const;
 
 private:
 	// Variables privees
