@@ -37,10 +37,9 @@ ostream& operator<<(ostream& sortie, Specialite& specialite)
 	return sortie << " | " << specialite.domaine_ << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size())
 	 << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_
 	 << AFFICHER_ESPACE(espace_niveau) << " | ";
-	cout << "AAAAA test" << endl;
 }
 
-void Specialite::information() const
+void Specialite::information() 
 {
-	cout << this;
+	cout << *this;
 }

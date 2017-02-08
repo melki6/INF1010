@@ -48,8 +48,8 @@ int main()
 
 
 	//4-  Ajoutez les 6 objets du type Infimier � au personnel de l'Hôpital Sacré-Coeur de Montréal
-	personnel1 += infirmier1;
-	personnel1 += infirmier2;
+	personnel1.operator+=(infirmier1).operator+=(infirmier2).operator+=(infirmier4);
+	personnel1 += infirmier2 += infirmier3;
 	personnel1 += infirmier3;
 	personnel1 += infirmier4;
 	personnel1 += infirmier5;

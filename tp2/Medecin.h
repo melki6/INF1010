@@ -29,7 +29,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& sortie, Medecin& medecin);
 
-	void information() const;
+	void information();
 
 private:
 	// Variables privees

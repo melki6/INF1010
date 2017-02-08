@@ -29,12 +29,13 @@ public:
 		
 	friend ostream& operator<<(ostream& sortie,Personnel* personnel); // AC: operateur pour affichage Personnel
 
-	void information() const;
+	void information();
+	void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
+	void afficherMedecins() const; // A MODIFIER... (si necessaire)
 	// _________TP2___________
 
 private:
-	void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
-	void afficherMedecins() const; // A MODIFIER... (si necessaire)
+	
 	vector < Infirmier* > infirmiers_;     //AC: ajout des vecteurs des pointeurs Infirmiers et Medecins
 	vector < Medecin*> medecins_;
 	// _________TP2___________

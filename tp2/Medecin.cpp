@@ -48,15 +48,16 @@ void Medecin::modifierSpecialite(Specialite* specialite)
 
 ostream& operator<<(ostream& sortie, Medecin& medecin)
 {
-	return sortie << "| " << medecin.nom_ 
-		<< AFFICHER_ESPACE(espace_nom - medecin.nom_.size()) << " | " 
-		<< AFFICHER_ESPACE(espace_horaires - std::to_string(medecin.horaires_).size()) << medecin.horaires_
-		<< AFFICHER_ESPACE(espace_horaires)<<medecin.specialite_<< endl;
+	return sortie << "| " << medecin.nom_ << AFFICHER_ESPACE(espace_nom - medecin.nom_.size())
+		<< " | " << AFFICHER_ESPACE(espace_horaires - std::to_string(medecin.horaires_).size()) << medecin.horaires_
+		<< AFFICHER_ESPACE(espace_horaires)
+		<< medecin.obtenirSpecialite()
+	<< endl;
 }
 
-void Medecin::information() const
+void Medecin::information()
 {
-	cout << this;
+	cout << *this;
 }
 
 bool Medecin::operator==(Medecin &medecin)

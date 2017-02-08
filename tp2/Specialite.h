@@ -19,7 +19,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& sortie, Specialite& Specialite);
 
-	void information() const; // A MODIFIER... (si necessaire) 
+	void information(); // A MODIFIER... (si necessaire) 
 
 	// _________TP2___________
 private:
