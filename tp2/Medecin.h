@@ -9,8 +9,8 @@ using namespace std;
 class Medecin 
 {
 public:
-	// Constructeurs par parametre
-	Medecin(const string& nom); // A MODIFIER... (si necessaire)
+	// Constructeurs 
+	Medecin(); // 
 	Medecin(const string& nom, int horaires, Specialite* specialite); // A MODIFIER... (si necessaire)
 	Medecin(const Medecin& medecin); //costructeur par copie
 	// Destructeur

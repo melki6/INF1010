@@ -86,29 +86,45 @@ int main()
 	//8- Creer un autre medecin Sherlock en utilisant l'opérateur = et en utilisant le medecin existante Sherlock.
 	// Le horaire du deuxieme Sherlock devrai ensuite etre modifie pour une valeur differnte du premier Sherlock
 	
+	Medecin medecin8=*medecin2;
+	medecin8.modifierHoraires(33);
 
 
 	//9- Creer un autre medecin Holmes en utilisant le constructeur de copie et en utilisant le medecin existante Holmes.
 	// Le horaire du deuxieme Holmes devrai ensuite etre modifie pour une valeur differnte du premier Holmes
-	// A COMPLETER...
+	Medecin medecin9(*medecin3);
+	medecin9.modifierHoraires(11);
 
 
-	//10- Ajoutez les medecins : parmis le personnel de l'hopital Sacré-Coeur : 
-	// Dr. Franc, Dr. Sherlock, Dr. Holmes, Dr. Jean, Dr. Jules
-	// A COMPLETER...
-	// Dr. Sherlock(2), Dr. Holmes(2), Dr. Kyle, Dr. House
-	// A COMPLETER...
+		//10- Ajoutez les medecins : parmis le personnel de l'hopital Sacré-Coeur : 
+		// Dr. Franc, Dr. Sherlock, Dr. Holmes, Dr. Jean, Dr. Jules
+		// A COMPLETER...
+		// Dr. Sherlock(2), Dr. Holmes(2), Dr. Kyle, Dr. House
+	personnel1 += medecin1;
+	personnel1 += medecin2;
+	personnel1 += medecin3;
+	personnel1 += medecin5;
+	personnel1 += medecin6;
+	personnel1 += &medecin8;
+	personnel1 += &medecin9;
+	personnel1 += medecin4;
+	personnel1 += medecin7;
 
 
 
-	//11- Retirer le medecin Jean et deux infirmiers de l'hopital Sacré-Coeur et ajouter les
-	// a l'hopital Jean-talon
 
 
-	//12- Faites afficher l'hopital Sacré-Coeur puis Jean-Talon
-	// A COMPLETER...
-	hopital1->information();
-	hopital2->information();
+		//11- Retirer le medecin Jean et deux infirmiers de l'hopital Sacré-Coeur et ajouter les
+		// a l'hopital Jean-talon
+	//hopital1->obtenirPersonnel()->operator-=(infirmier2);
+	//hopital1->obtenirPersonnel()->operator-=(infirmier4);
+	//hopital1->obtenirPersonnel()->operator-=(medecin5);
+
+
+		//hopital1->information();
+	    //hopital2->information();
+	personnel1.information();
+	personnel2.information();
 
 
 

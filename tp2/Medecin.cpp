@@ -3,8 +3,11 @@
 #include <iomanip>
 #include "Const.h"
 
-Medecin::Medecin(const string& nom): nom_(nom), horaires_(0)
+Medecin::Medecin()
 {
+	nom_ = "";
+	horaires_ = 0;
+	specialite_ = nullptr;
 }
 
 
@@ -12,9 +15,10 @@ Medecin::Medecin(const string& nom, int horaires, Specialite* specialite): nom_(
 {
 }
 
-Medecin::Medecin(const Medecin& medecin)
+Medecin::Medecin(const Medecin& medecin)  //constructeur par copie
 {
-
+	Medecin copieMedecin;
+	copieMedecin = medecin;
 }
 Medecin::~Medecin() // A MODIFIER... (si necessaire)
 {
