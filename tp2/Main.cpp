@@ -9,6 +9,7 @@
 #include "Specialite.h"
 #include "Personnel.h"
 #include <vector>
+#include "Medecin.h"
 using namespace std;
 
 int main()
@@ -31,11 +32,11 @@ int main()
 	Infirmier* infirmier9 = new Infirmier("Lamarre", "Roger", 9);
 	Infirmier* infirmier10 = new Infirmier("Laplante","Linda",10);
 	Infirmier* infirmier11 = new Infirmier("Latour", "Hug", 3);
-	//
-	//if (*infirmier1 == *infirmier2)
-	//	cout << "ERREUR:infirmier IDENTIQUE" << endl;
-	//else
-	//	cout << "Infirmier AJOUTER" << endl;
+	
+	if (*infirmier1 == *infirmier2)
+		cout << "ERREUR:infirmier IDENTIQUE" << endl;
+	else
+		cout << "Infirmier AJOUTER" << endl;
 	
 	//2-  Creez deux objets du type Personnel � l'aide du constructeur par d�faut
 	Personnel personnel1;
@@ -48,7 +49,6 @@ int main()
 
 
 	//4-  Ajoutez les 6 objets du type Infimier � au personnel de l'Hôpital Sacré-Coeur de Montréal
-	personnel1.operator+=(infirmier1).operator+=(infirmier2).operator+=(infirmier4);
 	personnel1 += infirmier2;
 	personnel1 += infirmier3;
 	personnel1 += infirmier4;
@@ -57,7 +57,6 @@ int main()
 
 	personnel1.information();
 
-	cout << *infirmier10 << " " << *infirmier3;
 
 
 
@@ -65,10 +64,29 @@ int main()
 	// A COMPLETER...
 	
 	//6-  Creez 7 objets du type Specialite � l'aide du constructeur par param�tre avec des valeurs de votre choix
-	// Specialites : Chirurgie, Demartologie, Gastrologie, Sport, Podologie, Pediatrie, Psychiatrie
+	//Specialite Chirurgie, Demartologie, Gastrologie, Sport, Podologie, Pediatrie, Psychiatrie;
 	// A COMPLETER...
+	Specialite* Chirurgie = new Specialite("Chirurgie", 15);
+	Specialite* Dermatologie = new Specialite("Dermatoligie", 10);
+	Specialite* Gastrologie = new Specialite("Gastrologie", 11);
+	Specialite* Sport = new Specialite("Sport", 7);
+	Specialite* Podologie = new Specialite("Podologie", 8);
+	Specialite* Pediatrie = new Specialite("Pediatrie", 9);
+	Specialite* Psychiatrie = new Specialite("Psychiatrie", 45);
 
 	//7- Creez 7 autres objets du type Medecin � l'aide du constructeur par param�tre avec des valeurs de votre choix
+	Medecin* franc = new Medecin("Franc", 10, Chirurgie);
+	Medecin* Sherlock = new Medecin("Sherlock", 6, Dermatologie);
+	Medecin* Holmes = new Medecin("Holmes", 3, Gastrologie);
+	Medecin* Kyle = new Medecin("Kyle", 7, Sport);
+	Medecin* Jean = new Medecin("Jean", 8, Gastrologie);
+	Medecin* Jules = new Medecin("Jules", 9, Pediatrie);
+	Medecin* House = new Medecin("House", 10, Psychiatrie);
+	personnel1 += franc;
+	personnel1 += Sherlock;
+	personnel1 += Holmes;
+
+
 	// Dr. Franc : en Chirurgie
 	// Dr. Sherlock : en Demartologie
 	// Dr. Holmes : en Gastrologie
