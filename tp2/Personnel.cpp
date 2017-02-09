@@ -11,7 +11,7 @@ Personnel::~Personnel() {};
 	
 bool Personnel::ajouterMedecin(Medecin* medecin)
 {
-	bool medecinTrouve;
+	bool medecinTrouve=false;
 
 	for (int i = 0; i < medecins_.size(); i++)    // AC: parcourir le tableau pour trouver si le medecin existe
 	{
@@ -33,18 +33,19 @@ bool Personnel::ajouterMedecin(Medecin* medecin)
 
 bool Personnel::retirerMedecin(const std::string& nom)
 {
-
+	bool medecinRetire = false;
 
 	for (int i = 0; i < medecins_.size(); i++)    // AC: parcourir le tableau pour trouver si le medecin existe
 	{
 		if (*medecins_[i] == nom) {
 			medecins_[i] = medecins_[medecins_.size()];   // copier le contenu du dernier medicin a la place de medecin curent
 			medecins_.pop_back();                          // effacer le dernier element du vecteur medecins
-			return true;
+			medecinRetire=true;
 		}
 		else
-			return false;
+			medecinRetire=false;
 	}
+	return medecinRetire;
 }
 
 Personnel& Personnel::operator+=(Medecin* medecin)
@@ -82,18 +83,19 @@ bool Personnel::ajouterInfirmier(Infirmier* infirmier)
 
 bool Personnel::retirerInfirmier(const std::string& nomComplet) 
 {
-
+	bool infirmierRetire=false;
 	for (int i = 0; i < infirmiers_.size(); i++)    // AC: parcourir le tableau pour trouver si l'infirmier existe
 	{
 		if (*infirmiers_[i] == nomComplet) {
 			infirmiers_[i] = infirmiers_[infirmiers_.size()];   // copier le contenu du dernier infirmier a la place de l'infirmier curent
 			infirmiers_.pop_back();                          // effacer le dernier element du vecteur infirmier
-			return true;
+			infirmierRetire=true;
 		}
 		else
-			return false;
+			infirmierRetire=false;
 	}
 
+	return infirmierRetire;
 }
 	
 Personnel& Personnel::operator+=(Infirmier* infirmier)  //AC: appel a la fonction ajouterInfirmier pour implementer += infirmier

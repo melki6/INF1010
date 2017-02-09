@@ -7,10 +7,15 @@ Medecin::Medecin(const string& nom): nom_(nom), horaires_(0)
 {
 }
 
+
 Medecin::Medecin(const string& nom, int horaires, Specialite* specialite): nom_(nom), horaires_(horaires), specialite_(specialite)
 {
 }
 
+Medecin::Medecin(const Medecin& medecin)
+{
+
+}
 Medecin::~Medecin() // A MODIFIER... (si necessaire)
 {
 	
@@ -66,5 +71,13 @@ bool Medecin::operator==(Medecin &medecin)
 bool Medecin::operator==(const string &Nom)
 {
 	return  nom_ == Nom;
+}
+
+void Medecin::operator=(const Medecin&  medecin)
+{
+	nom_=medecin.nom_;
+	horaires_ = medecin.horaires_;
+	specialite_ = medecin.specialite_;
+
 }
 

@@ -13,9 +13,9 @@ string Hopital::obtenirNom() const
 {
 	return nom_;
 }
-Personnel Hopital::obtenirPersonnel()const 
+Personnel* Hopital::obtenirPersonnel()const 
 {
-	return *personnel_;
+	return personnel_;
 }
 
 // Methodes de modification
@@ -35,7 +35,7 @@ void Hopital::information()
 
 ostream& operator<<(ostream& sortie, Hopital& hopital)
 {
-	hopital.information();
+	hopital.obtenirPersonnel()->information();
 	return sortie;
 }
 

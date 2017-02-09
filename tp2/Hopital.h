@@ -16,7 +16,7 @@ public:
 
 				// Methodes d'acces
 	string obtenirNom() const;
-	Personnel obtenirPersonnel() const;
+	Personnel* obtenirPersonnel() const;
 
 	// Methodes de modification
 	void modifierNom(const string& nom);

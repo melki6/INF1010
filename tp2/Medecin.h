@@ -12,6 +12,7 @@ public:
 	// Constructeurs par parametre
 	Medecin(const string& nom); // A MODIFIER... (si necessaire)
 	Medecin(const string& nom, int horaires, Specialite* specialite); // A MODIFIER... (si necessaire)
+	Medecin(const Medecin& medecin); //costructeur par copie
 	// Destructeur
 	~Medecin(); // A MODIFIER... (si necessaire)
 	
@@ -26,6 +27,8 @@ public:
 	void modifierSpecialite(Specialite* specialite);
 	bool Medecin::operator==(Medecin &medecin);
 	bool Medecin::operator==(const std::string &Nom);
+	void Medecin::operator=(const Medecin& medecin);
+
 
 	friend std::ostream& operator<<(std::ostream& sortie, Medecin& medecin);
 

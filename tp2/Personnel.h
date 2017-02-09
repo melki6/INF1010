@@ -27,7 +27,7 @@ public:
 	Personnel& operator+=(Infirmier* infirmier);
 	Personnel& operator-=(Infirmier* infirmier);
 		
-	friend ostream& operator<<(ostream& sortie,Personnel* personnel); // AC: operateur pour affichage Personnel
+	friend ostream& operator<<(ostream& sortie,Personnel& personnel); // AC: operateur pour affichage Personnel
 
 	void information();
 	void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
