@@ -66,7 +66,6 @@ int main()
 	echiquier.ajouterPion(pionB7);
 	echiquier.ajouterPion(pionB8);
 	
-
 	echiquier.ajouterPion(pionN1);
 	echiquier.ajouterPion(pionN2);
 	echiquier.ajouterPion(pionN3);

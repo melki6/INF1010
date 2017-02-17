@@ -26,8 +26,9 @@ public:
 	~Pion();
 
 	//methodes
-	bool estMovementValide(int toX, int toY);
+	bool estMouvementValide(int toX, int toY);
 	void deplacer(int toX, int toY);
+	void modifierPositionInitiale();  //change position initiale a false
 
 
 private:

@@ -31,8 +31,8 @@ void Tour::deplacer(int toX, int toY)
 {
 	if (estMouvementValide(toX, toY))
 	{
-		cout << "Deplacement de la Tour de la position (X,Y):(" << obtenirPositionX() << ","
-			 << obtenirPositionY() << ") " << " a la position (X,Y):(" << toX << "," << toY << ")" << endl << endl;
+		cout << "Deplacement de la Tour "<<obtenirId()<<" de la position :(" << obtenirPositionX() << ","
+			 << obtenirPositionY() << ") " << " a la position :(" << toX << "," << toY << ")" << endl << endl;
 		Piece::modifierPositionX(toX);
 		Piece::modifierPositionY(toY);
 	}
