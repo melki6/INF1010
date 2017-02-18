@@ -1,9 +1,9 @@
 
 /********************************************
 * Titre: Travail pratique #3 - Piece.h
-* Date:
-* Auteur:
-*******************************************/
+* Date: 19 Février 2017
+* Auteur: Andrei Catana, Imane Abdillahi Ahmed, George Gnaga
+**************************************************/
 
 
 #ifndef TOUR_H

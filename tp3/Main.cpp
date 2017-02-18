@@ -1,8 +1,8 @@
 
 /**************************************************
 * Titre: Travail pratique #3 - Main.cpp
-* Date:
-* Auteur:
+* Date: 19 Février 2017
+* Auteur: Andrei Catana, Imane Abdillahi Ahmed, George Gnaga
 **************************************************/
 #include "Echiquier.h"
 

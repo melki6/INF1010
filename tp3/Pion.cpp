@@ -1,9 +1,10 @@
+/**********************************************
+* Titre: Travail pratique #3 - Pion.cpp
+* Date: 9 Fevrier 2017
+* Auteur: Andrei Catana, Imane Abdillahi Ahmed, George Gnaga
+*Description: Implementation de la classe Pion.cpp
+**********************************************/
 
-/********************************************
-* Titre: Travail pratique #3 - Tour.cpp
-* Date:0
-* Auteur:
-*******************************************/
 
 #include "Pion.h"
 
@@ -17,6 +18,11 @@ void Pion::modifierPositionInitiale()
 {
 	estPositionInitiale_ = false;
 }
+/****************************************************************************************************************
+* Fonction: Pion::estMouvementValide
+* Description: verifie si le mouvement du Pion est valide et retourne un booléen
+* Paramètres: int toX, int toY
+*****************************************************************************************************************/
 
 bool Pion::estMouvementValide(int toX, int toY)
 {
@@ -40,7 +46,7 @@ bool Pion::estMouvementValide(int toX, int toY)
 					resultat = true;
 		}
 
-		if(obtenirCouleur()=="noir") // si la couleur est noire, les regles de deplacement sont suivantes
+		if(obtenirCouleur()=="noir") // si la couleur est noire, les regles de deplacement sont les suivantes
 		{
 			if (estPositionInitiale_ == true)
 			{
@@ -56,10 +62,15 @@ bool Pion::estMouvementValide(int toX, int toY)
 	}
 	return resultat;
 }
+/****************************************************************************************************************
+* Fonction: Pion::deplacer
+* Description: affiche la nouvelle position du Pion si il a été déplacé
+* Paramètres: int toX, int toY
+*****************************************************************************************************************/
 
 void Pion::deplacer(int toX, int toY)
 {
-	if (estMouvementValide(toX, toY))
+	if (estMouvementValide(toX, toY)) // si le mouvement est valide, affiche le déplacement du Pion
 	{
 		cout << "Deplacement du Pion "<<obtenirId()<<" de la position :(" << obtenirPositionX() << ","
 			<< obtenirPositionY() << ") " << " a la position :(" << toX << "," << toY << ")" << endl << endl;

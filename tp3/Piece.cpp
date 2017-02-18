@@ -1,13 +1,15 @@
 
-/********************************************
+/**********************************************
 * Titre: Travail pratique #3 - Piece.cpp
-* Date:0
-* Auteur:
-*******************************************/
+* Date: 19 Fevrier 2017
+* Auteur: Andrei Catana, Imane Abdillahi Ahmed, George Gnaga
+*Description: Implementation de la classe Piece.cpp
+**********************************************/
+
 
 #include "Piece.h"
 
-Piece::Piece()   //AC:constructeur par defaut
+Piece::Piece()   //constructeur par defaut
 {
 	 id_="";
 	 couleur_="";
@@ -15,7 +17,7 @@ Piece::Piece()   //AC:constructeur par defaut
 	 positionY_=0;
 }; 
 
-Piece::Piece(string id, string couleur, int positionX, int positionY)  //AC: constructeur par paramentre
+Piece::Piece(string id, string couleur, int positionX, int positionY)  // constructeur par paramentre
 {
 	id_ = id;
 	couleur_ = couleur;
@@ -65,10 +67,15 @@ void Piece::modifierPositionY(int y)
 {
 	positionY_ = y;
 }
+/****************************************************************************************************************
+* Fonction: Piece::estMouvementValide
+* Description: verifie si le mouvement de la Piece est valide et retourne un booléen
+* Paramètres: int toX, int toY
+*****************************************************************************************************************/
 
 bool Piece::estMouvementValide(int toX, int toY)
 {
-	//AC:si toX et toY change la position et si toX/toY sont comprise entre 0-7
+	//verifie si toX et toY ont changer de position et si le déplacement de toX/toY est compris entre 0-7
 	bool resultat = false;
 	if ((positionX_ == toX && positionY_ != toY)||(positionX_ != toX && positionY_ == toY)|| (positionX_ != toX && positionY_ != toY))
 	{
