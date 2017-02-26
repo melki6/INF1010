@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Personnel.cpp
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #include "Medecin.h"
 #include "Infirmier.h"
 #include "Personnel.h"
@@ -8,7 +14,12 @@ using namespace std;
 Personnel::Personnel() {};
 
 Personnel::~Personnel() {};
-	
+/*******************************************************************************************************
+* Fonction: PERSONNEL::ajouterMedecin
+* Description: ajoute un Medecin au vecteur de medecin s'il n'y est pas déja, et retourne un booléen
+* Paramètres: Infirmier* medecin
+********************************************************************************************************/
+
 bool Personnel::ajouterMedecin(Medecin* medecin)
 {
 	bool medecinTrouve=false;
@@ -30,6 +41,11 @@ bool Personnel::ajouterMedecin(Medecin* medecin)
 	}
 	
 }
+/**************************************************************************************************************************************
+* Fonction: PERSONNEL::retirerMedecin
+* Description: retire un Medecin au vecteur de medecin si le medecin existe et retourne un booléen
+* Paramètres: Infirmier* medecin
+***************************************************************************************************************************************/
 
 bool Personnel::retirerMedecin(const std::string& nom)
 {
@@ -47,12 +63,22 @@ bool Personnel::retirerMedecin(const std::string& nom)
 	}
 	return medecinRetire;
 }
+/****************************************************************************
+* Fonction:	operator+=
+* Description: rajoute un medecin
+* Paramètres:Medecin* medecin
+****************************************************************************/
 
 Personnel& Personnel::operator+=(Medecin* medecin)
 {
 	ajouterMedecin(medecin);
 	return *this;	
 }
+/****************************************************************************
+* Fonction:	operator-=
+* Description: enleve un medecin
+* Paramètres:Medecin* medecin
+****************************************************************************/
 
 Personnel& Personnel::operator-=(Medecin* medecin)
 {
@@ -97,12 +123,22 @@ bool Personnel::retirerInfirmier(const std::string& nomComplet)
 
 	return infirmierRetire;
 }
-	
+/****************************************************************************
+* Fonction:	operator+=
+* Description: rajoute un infirmier
+* Paramètres:Medecin* infirmier
+****************************************************************************/
+
 Personnel& Personnel::operator+=(Infirmier* infirmier)  //AC: appel a la fonction ajouterInfirmier pour implementer += infirmier
 {
 	ajouterInfirmier(infirmier);
 	return *this;
 }
+/****************************************************************************
+* Fonction:	operator-=
+* Description: rajoute un infirmier
+* Paramètres:Medecin* infirmier
+****************************************************************************/
 
 Personnel& Personnel::operator-=(Infirmier* infirmier) //AC: appel a la fonction ajouterInfirmier pour implementer -= infirmier
 {
@@ -110,6 +146,11 @@ Personnel& Personnel::operator-=(Infirmier* infirmier) //AC: appel a la fonction
 	return *this;
 }
 
+/****************************************************************************
+* Fonction:	operator<<
+* Description: affiche un object personnel
+* Paramètres:ostream sortie, Personnel personnel
+****************************************************************************/
 
  ostream& operator<<(ostream& sortie, Personnel& personnel) // AC: operateur pour l'affichage personnel
 
@@ -118,12 +159,22 @@ Personnel& Personnel::operator-=(Infirmier* infirmier) //AC: appel a la fonction
 	 return sortie;
 
 }
+ /****************************************************************************
+ * Fonction:	Personnel::information
+ * Description: appel les fonction afficherInfirmier() et afficherMedecin()
+ * Paramètres: aucun
+ ****************************************************************************/
 
  void Personnel::information() // A MODIFIER...
  {
 	 afficherInfirmiers();
 	 afficherMedecins();
  }
+ /****************************************************************************
+ * Fonction:	Personnel::afficherMedecin
+ * Description: affiche un vecteur de Medecin
+ * Paramètres:aucun
+ ****************************************************************************/
 
 void Personnel::afficherMedecins() const // A MODIFIER... (si necessaire)
 {
@@ -150,6 +201,11 @@ void Personnel::afficherMedecins() const // A MODIFIER... (si necessaire)
 	cout<< AFFICHER_LINE(espacement_medecin + tabMed.size()) << endl
 		<< AFFICHER_ESPACE(espacement_medecin + tabMed.size()) << endl;
 }
+/****************************************************************************
+* Fonction:	Personnel::afficherInfirmier
+* Description: affiche un vecteur d'infirmier
+* Paramètres:aucun
+****************************************************************************/
 
 void Personnel::afficherInfirmiers() const // A MODIFIER... (si necessaire)
 {

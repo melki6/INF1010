@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Infirmier.h
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #ifndef INFIRMIER_H
 #define INFIRMIER_H
 

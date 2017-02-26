@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Infirmier.cpp
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #include "Infirmier.h"
 #include <iostream>
 #include <iomanip>

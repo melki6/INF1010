@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Personnel.h
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #ifndef PERSONNEL_H
 #define PERSONNEL_H
 

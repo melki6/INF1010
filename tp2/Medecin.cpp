@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Medecin.cpp
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #include "Medecin.h"
 #include <iostream>
 #include <iomanip>

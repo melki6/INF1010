@@ -1,3 +1,10 @@
+/**********************************************
+* Titre: Travail pratique #2 - Specialite.cpp
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
+
 #include "Specialite.h"
 #include <iostream>
 #include <iomanip>

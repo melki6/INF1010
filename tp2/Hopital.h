@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Hopital.h
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #ifndef HOPITAL_H
 #define HOPITAL_H
 

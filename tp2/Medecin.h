@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #2 - Medecin.h
+* Date: 9 Février 2017
+* Auteur: Andrei ,Imane Abdillahi Ahmed, George Gnaga
+**********************************************/
+
 #ifndef MEDECIN_H
 #define MEDECIN_H
 
