@@ -32,8 +32,12 @@ bool Tour::estMouvementValide(int toX, int toY) {
 bool Tour::deplacer(int toX, int toY) {
 	if (estMouvementValide(toX, toY)) {
 		modifierPositionX(toX);
-		modifierPositionX(toY);
+		modifierPositionY(toY);
+		cout << "Deplacement de la piece reussie" << endl;
 		return true;
 	}
-	return false;
+	else {
+		cout << "Mouvement non valide" << endl;
+		return false;
+	}
 }

@@ -83,17 +83,16 @@ public :
 		return typeid(*this).name();// A IMPLEMENTER	
 	}
 
-	friend std::ostream& operator<<(std::ostream& out, const Piece& piece)
+	friend ostream& operator<<(ostream& out,  Piece& piece)
 	{
 		//A IMPLEMENTER
-		afficher(out, piece);
-		return out;
+		return piece.afficher(out);
 	}
 
 	                                            
-	ostream&  afficher(ostream& stream, const Piece& piece){  // A MODIFIER SI NECESSAIRE
-		stream << "Piece " << piece.couleur_ << " d'id " << piece.id_ << " : " << endl;
-		stream << "Position (" << piece.positionX_ << ", " << piece.positionY_ << ")" << endl;
+	ostream&  afficher(ostream& stream){  // A MODIFIER SI NECESSAIRE
+		stream << "Piece " << couleur_ << " d'id " << id_ << " : " << endl;
+		stream << "Position (" << positionX_ << ", " << positionY_ << ")" << endl;
 		return stream;
 	}
 

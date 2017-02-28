@@ -30,50 +30,59 @@ void Pion::setEstPositionInitiale(bool estPositionInitiale) {
 
 
 bool Pion::estMouvementValide(int toX, int toY) {
+	bool resultat=false;
+
 	if (!Piece::estMouvementValide(toX, toY))
-		return false;
-	if (obtenirCouleur() == "blanc") {
-		if (obtenirEstPositionInitiale()) {
-			if (((toY - obtenirPositionY()) <= 2) && (toX == obtenirPositionX()) 
-				&& (toY > obtenirPositionY())) {
-				return true;
+		resultat = false;
+	else {
+
+		if (obtenirCouleur() == "blanc") {
+			if (obtenirEstPositionInitiale()) {
+				if (((toY - obtenirPositionY()) <= 2) && (toX == obtenirPositionX())
+					&& (toY > obtenirPositionY())) {
+					resultat = true;
+				}
+			}
+			else
+			{
+				if ((toY - obtenirPositionY()) <= 1 && (toX == obtenirPositionX())
+					&& toY > obtenirPositionY()) {
+					resultat = true;
+				}
 			}
 		}
-		else
-		{
-			if ((toY - obtenirPositionY()) <= 1 && (toX == obtenirPositionX()) 
-				&& toY > obtenirPositionY()) {
-				return true;
+		if (obtenirCouleur() == "noir") {
+			if (obtenirEstPositionInitiale()) {
+				if (((toY - obtenirPositionY()) <= 2) && (toX == obtenirPositionX())
+					&& (toY < obtenirPositionY())) {
+					resultat = true;
+				}
+			}
+			else
+			{
+				if (((toY - obtenirPositionY()) <= 1) && (toX == obtenirPositionX())
+					&& (toY < obtenirPositionY())) {
+					resultat = true;
+				}
 			}
 		}
+
 	}
-	if (obtenirCouleur() == "noir") {
-		if (obtenirEstPositionInitiale()) {
-			if (((toY - obtenirPositionY()) <= 2) && (toX == obtenirPositionX()) 
-				&& (toY < obtenirPositionY())) {
-				return true;
-			}
-		}
-		else
-		{
-			if (((toY - obtenirPositionY()) <= 1) && (toX == obtenirPositionX()) 
-				&& (toY < obtenirPositionY())) {
-				return true;
-			}
-		}
-	}
-	
-	return false;
-	
+	return resultat;
 }
 
 bool Pion::deplacer(int toX, int toY) {
 	if (estMouvementValide(toX, toY)) {
 		
 		modifierPositionX(toX);
-		modifierPositionX(toY);
+		modifierPositionY(toY);
 		estPositionInitiale_ = false;	
+		cout << "Deplacement de la piece reussie" << endl;
 		return true;
 	}
-	return false;
+	else {
+		cout << "Mouvement non valide" << endl;
+		return false;
+	}
+
 }

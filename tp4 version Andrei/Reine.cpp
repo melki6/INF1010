@@ -65,11 +65,14 @@ bool Reine::deplacer(int toX, int toY) {
 
 		modifierPositionX(toX);
 		modifierPositionY(toY);
+		cout << "Deplacement de la piece reussie" << endl;
 		return true;
 	}
-		
-	else
+
+	else {
+		cout << "Mouvement non valide" << endl;
 		return false;
+	}
 
 }
 
