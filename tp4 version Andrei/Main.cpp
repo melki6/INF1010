@@ -1,9 +1,18 @@
+ï»¿
 
-/**************************************************
+/**********************************************
 * Titre: Travail pratique #4 - Main.cpp
-* Date:
-* Auteur:
-**************************************************/
+* Date: 9 Fevrier 2017
+* Auteur: Andrei Catana, Imane Abdillahi Ahmed, George Gnaga
+*Description: creation d'un echiquer et ajout des element au tableau
+**********************************************/
+
+
+/************************REPONCES AUX QUESTIONS******************************************************
+*	1.La classe Piece est abstraite parce qu'on a declarÃ© une methode virtuelle pure (deplacer)     *                                               *
+*	2.Le destructeur virtual est utile pour ne le pas definir  dans chaque classe derivÃ©e           *
+*   3.On pourrait utiliser l'heritage multiple(de Fou et Tour) pour crÃ©er la classe Reine           *
+*****************************************************************************************************/
 
 #include "Piece.h"
 #include "Roi.h"
@@ -18,7 +27,7 @@ using namespace std;
 
 int main()
 {
-	//1-  Creez les huit pions blancs avec les coordonnées (i,1) i : 0-->7 et les id A2-->H2
+	//1-  Creez les huit pions blancs avec les coordonnÐ¹es (i,1) i : 0-->7 et les id A2-->H2
 	Pion* pionB1 = new Pion("A2", "blanc", 0, 1);
 	Pion* pionB2 = new Pion("B2", "blanc", 1, 1);
 	Pion* pionB3 = new Pion("C2", "blanc", 2, 1);
@@ -27,7 +36,7 @@ int main()
 	Pion* pionB6 = new Pion("F2", "blanc", 5, 1);
 	Pion* pionB7 = new Pion("G2", "blanc", 6, 1);
 	Pion* pionB8 = new Pion("H2", "blanc", 7, 1);
-	//2-Creez les huit pions noirs avec les coordonnées (i,6) i : 0-->7 et les id A7-->H7
+	//2-Creez les huit pions noirs avec les coordonnÐ¹es (i,6) i : 0-->7 et les id A7-->H7
 	Pion* pionN1 = new Pion("A7", "noir", 0, 6);
 	Pion* pionN2 = new Pion("B7", "noir", 1, 6);
 	Pion* pionN3 = new Pion("C7", "noir", 2, 6);
@@ -61,7 +70,7 @@ int main()
 	Echiquier unEchiquier;
 
 	cout << "----------AJOUT DES PIECES----------" << endl;
-	//9- Ajoutez toutes les pièces précidament définies à l'echiquier	
+	//9- Ajoutez toutes les piÐ¸ces prÐ¹cidament dÐ¹finies Ð° l'echiquier	
 	unEchiquier += pionB1;
 	unEchiquier += pionB2;
 	unEchiquier += pionB3;
@@ -101,16 +110,16 @@ int main()
 	unEchiquier += roiN;
 
 	cout << "----------TEST DES DEPLACEMENTS------------" << endl;
-	//10-  Deplacer la piece d'id A2 à la position (0,2)  --Deplacement de Pion
+	//10-  Deplacer la piece d'id A2 Ð° la position (0,2)  --Deplacement de Pion
 	unEchiquier.deplacerPiece("A2", 0, 2); 
 
-	//11-  Deplacer le piece d'id H7 à la position (7,4)  --Deplacement du Pion
+	//11-  Deplacer le piece d'id H7 Ð° la position (7,4)  --Deplacement du Pion
 	unEchiquier.deplacerPiece("H7", 7, 4); 
-	//12-  Deplacer la piece d'id A2 à la position (0,4)  --Deplacement du Pion
+	//12-  Deplacer la piece d'id A2 Ð° la position (0,4)  --Deplacement du Pion
 	unEchiquier.deplacerPiece("A2", 0, 4); 
-	//13-  Deplacer la piece d'id H8 à la position (7,6)  --Deplacement de la Tour
+	//13-  Deplacer la piece d'id H8 Ð° la position (7,6)  --Deplacement de la Tour
 	unEchiquier.deplacerPiece("H8", 7, 6); 
-	//14-  Deplacer la piece d'id H8 à la position (7,6)  --Deplacement de la Tour
+	//14-  Deplacer la piece d'id H8 Ð° la position (7,6)  --Deplacement de la Tour
 	unEchiquier.deplacerPiece("H8", 7, 6); 
 	//15-  Enlever la piece d'id A2 
 	unEchiquier -= "A2";

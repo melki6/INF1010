@@ -23,7 +23,7 @@ public :
 	Piece(const string& id, const string& couleur, int positionX, int positionY):id_(id), couleur_(couleur), positionX_(positionX), positionY_(positionY){}
 
 	// destructeur
-	~Piece() {}
+	 ~Piece() {}
 
 	// acesseur et modificateur
 	string obtenirId() const {
@@ -69,7 +69,7 @@ public :
 		}
 		else
 		{
-			cout << "Deplacement de la piece non autorise " << endl;
+			cout << "Deplacement de la piece non autorise  : " ;
 		}
 		return resultat;
 	} 
